@@ -1,0 +1,42 @@
+.main_confirmation {
+  margin: 3em 0;
+}
+
+.container_img {
+  display: flex;
+  justify-content: center;
+}
+
+.text_shopping {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+}
+
+.bloc_shopping {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  gap: 1em;
+  border: 1px solid grey;
+  margin-left: 1em;
+  padding: 0.5em;
+  @media screen and (min-width: 600px) {
+    margin-left: 6em;
+    width: 70%;
+    @media screen and (min-width: 1000px) {
+      margin-left: 20em;
+      width: 40%;
+      @media screen and (min-width: 1400px) {
+        margin-left: 32em;
+        width: 31%;
+      }
+    }
+  }
+}
+
+.line_shopping {
+  border: 1px solid grey;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}

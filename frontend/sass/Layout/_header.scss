@@ -1,0 +1,58 @@
+.container_nav {
+  background: $pink;
+  margin-bottom: 5em;
+}
+
+.row_header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.col_navbar {
+  padding-left: 0.5em;
+  @media screen and (min-width: 1000px) {
+    padding-left: 2em;
+  }
+}
+
+.btn_basket {
+  align-items: center;
+  display: flex;
+  font-size: 1em;
+  height: 2em;
+  background: $button;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    background: $black;
+    transition: all 0.4s ease-in-out;
+  }
+  @media screen and (min-width: 510px) {
+    padding: 0 0.5em 0 0.5em;
+  }
+}
+
+.btn_badge {
+  padding: 0.3em;
+  @media screen and (min-width: 510px) {
+    padding: 0;
+  }
+}
+
+.p_basket {
+  display: none;
+  @media screen and (min-width: 510px) {
+    display: block;
+    padding: 0 0.2em;
+    margin: 0.3em;
+  }
+}
+
+.d-flex {
+  align-content: center;
+  display: grid;
+  padding-right: 1em;
+}

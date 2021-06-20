@@ -1,0 +1,69 @@
+.text_center {
+  align-items: center;
+  display: flex;
+  font-size: 1em;
+  height: 2em;
+  background: transparent;
+  border-radius: 0.5em;
+  border: 1px solid;
+  padding: 0.25em 0.55em;
+}
+
+.footer {
+  display: grid;
+  padding-top: 4em;
+}
+
+.text_footer {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.container_footer {
+  background: $pink;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 0;
+}
+
+.wrapper_ul {
+  display: flex;
+  padding: 0;
+}
+
+.icon_twitter,
+.icon_instagram,
+.icon_facebook,
+.icon_whatsapp {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: rebeccapurple;
+}
+
+.fa-facebook:hover {
+  color: #3b5998;
+  text-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
+}
+
+.fa-twitter:hover {
+  color: #00aced;
+  text-shadow: 0 0 15px #00aced;
+  transition: all 0.5s ease;
+}
+
+.fa-instagram:hover {
+  color: #bc2a8d;
+  text-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
+}
+
+.fa-whatsapp:hover {
+  color: #4dc247;
+  text-shadow: 0 0 15px #4dc247;
+  transition: all 0.5s ease;
+}

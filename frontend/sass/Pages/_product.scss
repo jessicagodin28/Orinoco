@@ -1,0 +1,116 @@
+.container_product {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  background: #f5f5f5;
+  box-shadow: 5px 5px 15px rgba($button, 0.5);
+  border-radius: 10px;
+  width: 320px;
+  height: 600px;
+  @media screen and (min-width: 510px) {
+    width: 520px;
+    height: 350px;
+  }
+}
+
+#img_product {
+  width: 290px;
+  margin-top: 27px;
+  margin-left: 1em;
+  @media screen and (min-width: 510px) {
+    margin-left: 0;
+    margin-top: 47px;
+  }
+}
+
+.product {
+  width: 90%;
+  height: 80%;
+  margin-left: 2em;
+
+  @media screen and (min-width: 510px) {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    width: 40%;
+    height: 100%;
+    margin-left: 0;
+  }
+}
+
+.desc {
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 17px;
+  font-size: 0.7em;
+  line-height: 1.6em;
+  margin-right: 25px;
+  text-align: justify;
+}
+
+button {
+  background: rgba($button, 0.5);
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: -1px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f5f5f5;
+  cursor: pointer;
+
+  &:hover {
+    background: $black;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+.add {
+  width: 67%;
+  margin-left: 2.5em;
+  @media screen and (min-width: 510px) {
+    margin-left: 0;
+  }
+}
+
+.like {
+  width: 22%;
+}
+
+.colors {
+  display: grid;
+  color: #4e4e4e;
+  grid-template-columns: repeat(3, 3fr);
+  width: 20%;
+  grid-gap: 14px;
+  margin-left: 10px;
+  margin-top: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.pick {
+  margin-top: 11px;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.size {
+  padding: 9px 20px;
+  border: 1px solid #e0c9cb;
+  text-align: center;
+
+  &:hover {
+    background: $black;
+    color: #f5f5f5;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+.focus {
+  background: $button;
+  color: #f5f5f5;
+}
