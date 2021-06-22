@@ -1,18 +1,15 @@
+const { response } = require("express");
+
 fetch("http://localhost:3000/api/teddies")
-  .then(function (res) {
-    const resapi = res.json();
-    console.log(res);
-    return resapi;
+  .then((res) => {
+    return res.json();
   })
-  .then(function () {});
-//   .then(function (res) {
-//     if (res.ok) {
-//       return res.json();
-//     }
-//   })
-//   .then(function (value) {
-//     console.log(value);
-//   })
-//   .catch(function (err) {
-//     // Une erreur est survenue
-//   });
+  .then((res) => {
+    console.log(res);
+  });
+
+let html = "";
+
+for (let i = 0; i < response.length; i++) {
+  console.log(response[i].name);
+}

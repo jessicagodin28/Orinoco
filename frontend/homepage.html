@@ -18,7 +18,7 @@
       src="https://kit.fontawesome.com/9e54925222.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./frontend/js/index.js"></script>
+    <script src="./js/index.js"></script>
   </head>
   <body>
     <!--HEADER-->
@@ -27,17 +27,20 @@
         <div class="row_header">
           <nav class="col_navbar">
             <a href="./homepage.html">
-              <img src="./images/logo.png" alt="logo" class="img_logo"
+              <img src="../images/logo.png" alt="logo" class="img_logo"
             /></a>
           </nav>
-          <form class="d-flex">
-            <button class="btn_basket" type="submit">
+          <!-- <form class="d-flex">
+            <button class="btn_basket" type="submit"> -->
+          <div class="d-flex">
+            <div class="btn_basket">
               <i class="bi bi-bag"></i>
-              Panier
-              <!-- <p class="p_basket">Panier</p> -->
+              <a href="./cart.html"><p class="p_basket">Panier</p></a>
               <span class="btn_badge">0</span>
-            </button>
-          </form>
+            </div>
+          </div>
+          <!-- </button>
+          </form> -->
         </div>
       </div>
     </header>
@@ -64,13 +67,6 @@
               <div class="card_title">
                 <h3>Teddie</h3>
               </div>
-              <!-- <div class="card_text">
-                <p>
-                  Lorem ipsum dolor sit amet senectus efficitur leo quis
-                  sagittis turpis cubilia nostra cursus nascetur vulputate nam
-                  iaculis enim
-                </p>
-              </div> -->
               <div class="card_price">
                 <p class="card_text_price">40€</p>
               </div>
