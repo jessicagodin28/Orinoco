@@ -67,6 +67,9 @@
   background-clip: border-box;
   border: 2px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  .card_img_top {
+    width: 100%;
+  }
   @media screen and (min-width: 510px) {
     display: flex;
   }

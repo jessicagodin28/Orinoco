@@ -24,36 +24,42 @@
       <div class="container_nav">
         <div class="row_header">
           <nav class="col_navbar">
-            <a href="./homepage.html">
-              <img src="./images/logo.png" alt="logo"
+            <a href="./index.html">
+              <img src="../images/logo.png" alt="logo"
             /></a>
           </nav>
-          <form class="d-flex">
-            <button class="btn_basket" type="submit">
+          <div class="d-flex">
+            <div class="btn_basket">
               <i class="bi bi-bag"></i>
-              <p class="p_basket">Panier</p>
+              <a href="./cart.html"><p class="p_basket">Panier</p></a>
               <span class="btn_badge">0</span>
-            </button>
-          </form>
+            </div>
+          </div>
         </div>
       </div>
     </header>
-    <main class="main">
-      <div class="container_product">
-        <div class="img">
+
+    <section class="container_product">
+      <div class="product_picture_color">
+        <div class="img_teddie">
           <img
             src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
             id="img_product"
+            alt="picture teddie"
           />
         </div>
 
-        <p class="pick">Couleur</p>
-        <div class="colors">
-          <div class="size">Blanc</div>
-          <div class="size">Marron</div>
-          <div class="size">Noir</div>
+        <div class="pick_color">
+          <p class="pick">Couleur</p>
+          <div class="colors">
+            <div class="size">Blanc</div>
+            <div class="size">Marron</div>
+            <div class="size">Noir</div>
+          </div>
         </div>
-        <div class="product">
+      </div>
+      <div class="product">
+        <div class="product_body">
           <p>Ours en peluche</p>
           <h1>Norbert</h1>
           <h2 class="h2_product">40€</h2>
@@ -61,12 +67,12 @@
             Lorem ipsum dolor sit amet senectus efficitur leo quis sagittis
             turpis cubilia nostra cursus nascetur vulputate nam iaculis enim
           </p>
-          <div class="buttons_cart">
-            <button class="add">Ajouter au panier</button>
-          </div>
+        </div>
+        <div class="cart">
+          <a href="./cart.html" class="button">Ajouter au panier</a>
         </div>
       </div>
-    </main>
+    </section>
     <footer class="footer">
       <div class="container_footer">
         <div class="row_footer">
