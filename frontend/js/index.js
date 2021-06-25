@@ -1,3 +1,9 @@
+const makeElement = (tagName, className) => {
+  const divCard = document.createElement(tagName);
+  if (className) divCard.classList.add(className);
+  return divCard;
+};
+
 // promise pour la requete API avec méthode Fetch
 
 fetch("http://localhost:3000/api/teddies")
@@ -7,8 +13,11 @@ fetch("http://localhost:3000/api/teddies")
   .then((teddies) => {
     console.log(teddies);
 
+    // Element parent
+
     const container_card = document.querySelector(".container_card");
 
+    // Iteration sur le tableau pour atteindre chaque élément
     for (let teddy of teddies) {
       console.log(teddy.name);
 
@@ -19,21 +28,53 @@ fetch("http://localhost:3000/api/teddies")
 
       aElement.appendChild(divCard);
 
-      const divCardBody = document.createElement("div");
+      container_card.appendChild(aElement);
+
+      const divCardBody = makeElement("div");
       divCardBody.classList.add("card_body");
 
-      divCard.appenChild(divCardBody);
+      divCard.appendChild(divCardBody);
 
-      const divImg = document.createElement("img");
+      const divImg = makeElement("img");
       divImg.classList.add("card_img_top");
       divImg.src = teddy.imageUrl;
       divImg.alt = teddy.name;
 
-      divCardBody.appenChild(divImg);
-      const h3 = document.createElement("h3");
+      divCardBody.appendChild(divImg);
+
+      const divCardBlocText = makeElement("div");
+      divCardBlocText.classList.add("card_bloc_text");
+
+      divCardBody.appendChild(divCardBlocText);
+
+      const divCardTitle = makeElement("div");
+      divCardTitle.classList.add("card_title");
+
+      divCardBlocText.appendChild(divCardTitle);
+
+      const h3 = makeElement("h3");
       h3.innerText = teddy.name;
 
-      divCardBody.appenChild(h3);
+      divCardTitle.appendChild(h3);
+
+      const divCardText = makeElement("div");
+      divCardText.classList.add("card_text");
+
+      divCardTitle.appendChild(divCardText);
+
+      const p = makeElement("p");
+      p.innerText = teddy.description;
+
+      divCardText.appendChild(p);
+
+      const divCardPrice = makeElement("div");
+      divCardPrice.classList.add("card_price");
+
+      divCardText.appendChild(divCardPrice);
+
+      // divCardPrice.appendChild(p);
+      // p.innerText = teddy.price;
+
       console.log(divCard);
     }
   });
