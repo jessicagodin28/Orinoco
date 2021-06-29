@@ -22,7 +22,7 @@ fetch("http://localhost:3000/api/teddies")
       console.log(teddy.name);
 
       const aElement = makeElement("a", "");
-      aElement.href = `./product.html?id=${teddy._id}`;
+      // aElement.href = `./product.html?id=${teddy._id}`;
 
       const divCard = makeElement("div", "card");
 
@@ -70,10 +70,27 @@ fetch("http://localhost:3000/api/teddies")
       const divCardPrice = makeElement("div");
       divCardPrice.classList.add("card_price");
 
+      divCardPrice.innerText = `${(teddy.price / 100).toFixed(2)}€`;
       divCardText.appendChild(divCardPrice);
 
-      // divCardPrice.appendChild(p);
-      // p.innerText = teddy.price;
+      const divCardBtn = makeElement("div");
+      divCardBtn.classList.add("card_btn");
+
+      divCardPrice.appendChild(divCardBtn);
+
+      const divTextCenter = makeElement("div");
+      divTextCenter.classList.add("text_center");
+
+      divCardBtn.appendChild(divTextCenter);
+
+      // const linkAddBasket = makeElement("a");
+      // document.getElementById("link_add_basket");
+      // divTextCenter.appendChild(link_add);
+
+      const linkAddLink = makeElement("span");
+      linkAddLink.classList.add("add_link");
+      linkAddLink.innerText = "Ajouter au panier";
+      divTextCenter.appendChild(linkAddLink);
 
       console.log(divCard);
     }
