@@ -4,12 +4,25 @@ const makeElement = (tagName, className) => {
   return divCard;
 };
 
+const storeLocalStorage = window.localStorage.getItem("test");
+
+const store = JSON.parse(storeLocalStorage) ?? [];
+
+console.log(store);
+
+const storeElement = (teddy) => {
+  store.push(teddy);
+
+  window.localStorage.setItem("test", JSON.stringify(store));
+};
+
 // promise pour la requete API avec méthode Fetch
 
 fetch("http://localhost:3000/api/teddies")
   .then((res) => {
     return res.json();
   })
+
   .then((teddies) => {
     console.log(teddies);
 
@@ -18,17 +31,13 @@ fetch("http://localhost:3000/api/teddies")
     const container_card = document.querySelector(".container_card");
 
     // Iteration sur le tableau pour atteindre chaque élément
+
     for (let teddy of teddies) {
       console.log(teddy.name);
 
-      const aElement = makeElement("a", "");
-      // aElement.href = `./product.html?id=${teddy._id}`;
-
       const divCard = makeElement("div", "card");
 
-      aElement.appendChild(divCard);
-
-      container_card.appendChild(aElement);
+      container_card.appendChild(divCard);
 
       const divCardBody = makeElement("div");
       divCardBody.classList.add("card_body");
@@ -40,7 +49,12 @@ fetch("http://localhost:3000/api/teddies")
       divImg.src = teddy.imageUrl;
       divImg.alt = teddy.name;
 
-      divCardBody.appendChild(divImg);
+      const aElementImg = makeElement("a", "");
+      aElementImg.href = `./product.html?id=${teddy._id}`;
+
+      aElementImg.appendChild(divImg);
+
+      divCardBody.appendChild(aElementImg);
 
       const divCardBlocText = makeElement("div");
       divCardBlocText.classList.add("card_bloc_text");
@@ -50,7 +64,12 @@ fetch("http://localhost:3000/api/teddies")
       const divCardTitle = makeElement("div");
       divCardTitle.classList.add("card_title");
 
-      divCardBlocText.appendChild(divCardTitle);
+      const aElementImgTitle = makeElement("a", "");
+      aElementImgTitle.href = `./product.html?id=${teddy._id}`;
+
+      aElementImgTitle.appendChild(divCardTitle);
+
+      divCardBlocText.appendChild(aElementImgTitle);
 
       const h3 = makeElement("h3");
       h3.innerText = teddy.name;
@@ -60,7 +79,7 @@ fetch("http://localhost:3000/api/teddies")
       const divCardText = makeElement("div");
       divCardText.classList.add("card_text");
 
-      divCardTitle.appendChild(divCardText);
+      divCardBlocText.appendChild(divCardText);
 
       const p = makeElement("p");
       p.innerText = teddy.description;
@@ -83,13 +102,13 @@ fetch("http://localhost:3000/api/teddies")
 
       divCardBtn.appendChild(divTextCenter);
 
-      // const linkAddBasket = makeElement("a");
-      // document.getElementById("link_add_basket");
-      // divTextCenter.appendChild(link_add);
-
       const linkAddLink = makeElement("span");
       linkAddLink.classList.add("add_link");
       linkAddLink.innerText = "Ajouter au panier";
+      linkAddLink.addEventListener("click", () => {
+        storeElement(teddy);
+      });
+
       divTextCenter.appendChild(linkAddLink);
 
       console.log(divCard);
