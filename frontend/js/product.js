@@ -4,8 +4,8 @@ const makeElement = (tagName, className) => {
   return divCard;
 };
 
+// Récupération du produit avec l'id associé
+
 // Element parent
 
 const container_product = document.querySelector(".container_product");
-
-container_product.appendChild(divCard);
